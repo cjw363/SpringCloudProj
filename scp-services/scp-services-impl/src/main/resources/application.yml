@@ -3,3 +3,11 @@ server:
 spring:
   application:
     name: scp-services
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:10000/eureka
+    registry-fetch-interval-seconds: 5 #默认每隔30秒会重新从eureka获取列表
+  instance:
+    lease-renewal-interval-in-seconds: 5 #服务心跳续约(renew)的间隔，默认为30秒
+    lease-expiration-duration-in-seconds: 15 #服务失效时间，超过移除，默认值90秒

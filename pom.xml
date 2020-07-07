@@ -12,6 +12,7 @@
 		<module>scp-services</module>
 		<module>scp-auth</module>
 		<module>scp-eureka</module>
+		<module>scp-zuul</module>
 	</modules>
 	<packaging>pom</packaging>
 

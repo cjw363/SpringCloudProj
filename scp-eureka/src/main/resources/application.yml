@@ -7,8 +7,8 @@ eureka:
   client:
     service-url:
       defaultZone: http://127.0.0.1:${server.port}/eureka
-    register-with-eureka: false
-    fetch-registry: false
+    register-with-eureka: false # 把自己注册到eureka服务列表
+    fetch-registry: false # 拉取eureka服务信息
   server:
-    enable-self-preservation: false
-    eviction-interval-timer-in-ms: 5000
+    enable-self-preservation: false # 关闭自我保护模式（默认为打开）
+    eviction-interval-timer-in-ms: 5000 # 扫描失效服务的间隔时间（缺省为60*1000ms）

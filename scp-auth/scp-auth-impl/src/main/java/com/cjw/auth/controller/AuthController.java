@@ -1,6 +1,7 @@
 package com.cjw.auth.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -14,7 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 @RequestMapping("auth")
 public class AuthController {
-    @PostMapping("login")
+    @GetMapping("login")
     @ResponseBody
     public String login(){
         return "登录成功";

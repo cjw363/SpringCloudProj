@@ -1,8 +1,8 @@
 server:
-  port: 10002
+  port: 10003
 spring:
   application:
-    name: scp-auth
+    name: scp-zuul
 eureka:
   client:
     service-url:
@@ -11,3 +11,12 @@ eureka:
   instance:
     lease-renewal-interval-in-seconds: 5 #服务心跳续约(renew)的间隔，默认为30秒
     lease-expiration-duration-in-seconds: 15 #服务失效时间，超过移除，默认值90秒
+zuul:
+  routes:
+    scp-services:
+      path: /services/**
+      serviceId: scp-services
+      #http://127.0.0.1:10003/services/services/getdata
+    scp-auth:
+      path: /auth/**
+      serviceId: scp-auth
